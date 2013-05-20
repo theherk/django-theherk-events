@@ -2,6 +2,8 @@ from django.db import models
 from cms.models import CMSPlugin
 from django.template.defaultfilters import slugify
 from django.utils.translation import ugettext_lazy as _
+from resources.models import Organization
+from resources.models import Person
 
 
 class Calendar(models.Model):
