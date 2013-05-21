@@ -70,12 +70,12 @@ class Event(models.Model):
     )
     calendar = models.ForeignKey('Calendar')
     location = models.ForeignKey(
-        'Organization',
+        Organization,
         null=True,
         blank=True
     )
     contact = models.ForeignKey(
-        'Person',
+        Person,
         null=True,
         blank=True
     )
