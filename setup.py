@@ -7,7 +7,7 @@ def read(fname):
 
 setup(
     name='django-theherk-events',
-    version='1.3',
+    version='1.4',
     packages=find_packages(),
     include_package_data=True,
     install_requires=[
