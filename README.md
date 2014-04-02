@@ -10,6 +10,7 @@ Usage
 
         INSTALLED_APPS = (
             ...
+            'resources',
             'events',
         )
 
