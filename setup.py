@@ -11,7 +11,8 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     install_requires=[
-        'django-theherk-resources',
+        'django-cms>=2.4.1',
+        'django-theherk-resources>=1.4',
     ],
     license='see file LICENSE',
     description='Django CMS plugin to track events on multiple calendars',
