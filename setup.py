@@ -18,6 +18,7 @@ setup(
     description='Django CMS plugin to track events on multiple calendars',
     long_description=read('README.md'),
     url='https://github.com/theherk/django-theherk-events',
+    download_url='https://github.com/theherk/django-theherk-events/archive/1.5.zip',
     author='Adam Sherwood',
     author_email='theherk@gmail.com',
     classifiers=[
