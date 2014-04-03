@@ -7,6 +7,5 @@ class EventsApphook(CMSApp):
     name = _("Events Apphook")
     urls = ["events.urls"]
     app_name = "events"
-    namespace = "events"
 
 apphook_pool.register(EventsApphook)
