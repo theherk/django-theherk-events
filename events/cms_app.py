@@ -9,3 +9,4 @@ class EventsApphook(CMSApp):
     app_name = "events"
 
 apphook_pool.register(EventsApphook)
+

@@ -46,3 +46,4 @@ def event_detail(request, calendar_slug=None, event_slug=None):
         {'event': event, 'calendars': calendars},
         context_instance=context
     )
+
