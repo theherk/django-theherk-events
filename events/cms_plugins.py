@@ -14,7 +14,7 @@ class CalendarEventsPlugin(CMSPluginBase):
     module = _("TheHerk")
 
     def render(self, context, instance, placeholder):
-        events = Event.objects.filter(calendar__id=instance.calendar).filter(end__gte=datetime.date.today()).order_by('start')[:instance.number_to_show]
+        events = Event.objects.filter(calendar__id=instance.calendar.id).filter(end__gte=datetime.date.today()).order_by('start')[:instance.number_to_show]
         context.update({
             'instance': instance,
             'events': events,
