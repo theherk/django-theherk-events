@@ -99,20 +99,21 @@ class Event(models.Model):
         app_label = 'events'
 
 
-class EventsPlugin(CMSPlugin):
+class CalendarEventsPlugin(CMSPlugin):
     """
-    Plugin for sidebar to show upcoming events.
+    Plugin to show upcoming events from one calendar.
     """
-    NUMBER_CHOICES = (
-        (1, 1),
-        (5, 5),
-        (10, 10),
-        (25, 25),
-        (100, 100),
-    )
-    # used if need calendar selectable
-    # calendar = models.ForeignKey('Calendar')
+    calendar = models.ForeignKey('Calendar')
     number_to_show = models.IntegerField(
-        max_length=10,
-        choices=NUMBER_CHOICES
+        max_length=4,
     )
+
+
+class AllEventsPlugin(CMSPlugin):
+    """
+    Plugin to show upcoming events from all calendars.
+    """
+    number_to_show = models.IntegerField(
+        max_length=4,
+    )
+

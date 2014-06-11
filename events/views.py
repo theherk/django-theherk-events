@@ -9,11 +9,12 @@ from events.models import Calendar
 
 def index(request):
     calendars = Calendar.objects.all()
+    events = Event.objects.all().filter(end__gte=datetime.date.today()).order_by('start')
     current_app = resolve(request.path).namespace
     context = RequestContext(request, current_app=current_app)
     return render_to_response(
         'events/index.html',
-        {'calendars': calendars},
+        {'calendars': calendars, 'events': events},
         context_instance=context
     )
 
