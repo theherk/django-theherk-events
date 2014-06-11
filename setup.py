@@ -7,7 +7,7 @@ def read(fname):
 
 setup(
     name='django-theherk-events',
-    version='1.7',
+    version='1.8',
     packages=find_packages(),
     include_package_data=True,
     install_requires=[
@@ -18,7 +18,7 @@ setup(
     description='Django CMS plugin to track events on multiple calendars',
     long_description=read('README.md'),
     url='https://github.com/theherk/django-theherk-events',
-    download_url='https://github.com/theherk/django-theherk-events/archive/1.7.zip',
+    download_url='https://github.com/theherk/django-theherk-events/archive/1.8.zip',
     author='Adam Sherwood',
     author_email='theherk@gmail.com',
     classifiers=[
