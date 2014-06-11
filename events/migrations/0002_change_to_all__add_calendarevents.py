@@ -9,13 +9,13 @@ class Migration(SchemaMigration):
 
     def forwards(self, orm):
         # Renaming model 'EventsPlugin'
-        db.rename_table('cmsplugin_eventsplugin', 'cmsplugin_alleventsplugin')
+        db.rename_table('cmsplugin_eventsplugin', 'events_alleventsplugin')
 
         # Execute update of plugins in cms_cmsplugin
         db.execute("UPDATE cms_cmsplugin SET plugin_type = %s WHERE plugin_type = %s", ["AllEventsPlugin", "EventsPlugin"])
 
         # Change number_to_show max_length
-        db.alter_column('cmsplugin_alleventsplugin', 'number_to_show', self.gf('django.db.models.fields.IntegerField')(max_length=4))
+        db.alter_column('events_alleventsplugin', 'number_to_show', self.gf('django.db.models.fields.IntegerField')(max_length=4))
 
         # Adding model 'CalendarEventsPlugin'
         db.create_table('events_calendareventsplugin', (
@@ -28,7 +28,7 @@ class Migration(SchemaMigration):
 
     def backwards(self, orm):
         # Renaming model 'AllEventsPlugin' back
-        db.rename_table('cmsplugin_alleventsplugin', 'cmsplugin_eventsplugin')
+        db.rename_table('events_alleventsplugin', 'cmsplugin_eventsplugin')
 
         # Execute update of plugins in cms_cmsplugin
         db.execute("UPDATE cms_cmsplugin SET plugin_type = %s WHERE plugin_type = %s", ["EventsPlugin", "AllEventsPlugin"])
